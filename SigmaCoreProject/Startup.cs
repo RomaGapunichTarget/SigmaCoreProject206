@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,6 +35,8 @@ namespace SigmaCoreProject
            
             services.AddDbContext<sigmaCoreContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("sigmaCoreDB")));
+            services.AddDefaultIdentity<SigmaCoreIdentityContext>();
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
