@@ -18,7 +18,7 @@ namespace SigmaCoreProject.Controllers
         }
         public IActionResult Index()
         {
-            var lstNews = _context.News.Select(news => news).ToList();
+            var lstNewss = _context.News.Select(news => news).ToList();
             return View();
         }
 
