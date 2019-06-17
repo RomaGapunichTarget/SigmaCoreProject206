@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaCoreProject", "SigmaCoreProject\SigmaCoreProject.csproj", "{421600C7-36B9-4CB9-8FF4-45654FF65874}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{421600C7-36B9-4CB9-8FF4-45654FF65874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{421600C7-36B9-4CB9-8FF4-45654FF65874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{421600C7-36B9-4CB9-8FF4-45654FF65874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{421600C7-36B9-4CB9-8FF4-45654FF65874}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F24F2EE6-7B4F-4624-93D1-F5B6B21E499C}
+	EndGlobalSection
+EndGlobal
