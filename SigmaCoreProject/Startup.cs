@@ -34,7 +34,6 @@ namespace SigmaCoreProject
            
             services.AddDbContext<sigmaCoreContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("sigmaCoreDB")));
-            services.AddDefaultIdentity<SigmaCoreProjectContext>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
