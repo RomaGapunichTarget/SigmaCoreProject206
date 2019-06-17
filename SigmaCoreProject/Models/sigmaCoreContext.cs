@@ -13,6 +13,15 @@ namespace SigmaCoreProject.Models
         public virtual DbSet<Comments> Comments { get; set; }
         public virtual DbSet<News> News { get; set; }
 
+        public virtual DbSet<PhysPers> PhysPers { get; set; }
+
+        public virtual DbSet<Favorites> Favorites { get; set; }
+
+        public virtual DbSet<RankNews> RankNews { get; set; }
+        public virtual DbSet<S_TypeContent> STypeContent { get; set; }
+        public virtual DbSet<OtherContent> OtherContent { get; set; }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -51,6 +60,42 @@ namespace SigmaCoreProject.Models
                 entity.Property(e => e.ShoreInfo).HasMaxLength(500);
 
                 entity.Property(e => e.TitleNews).HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<PhysPers>(entity =>
+            {
+                entity.Property(e => e.DateDb).HasColumnType("datetime");
+
+                entity.Property(e => e.Name).HasMaxLength(500);
+
+                entity.Property(e => e.Patronymic).HasMaxLength(500);
+
+                entity.Property(e => e.Surname).HasMaxLength(500);
+
+                entity.Property(e => e.IdUser).HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<Favorites>(entity =>
+            {
+                entity.Property(e => e.IdUser).HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<RankNews>(entity =>
+            {
+                entity.Property(e => e.IdUser).HasMaxLength(500);
+
+                entity.Property(e => e.Rank).HasColumnType("decimal(5,2)");
+            });
+
+            modelBuilder.Entity<S_TypeContent>(entity =>
+            {
+                entity.Property(e => e.TypeConent).HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<OtherContent>(entity =>
+            {
+                entity.Property(e => e.TitleContent).HasMaxLength(5000);
+                entity.Property(e => e.IdUserCreate).HasMaxLength(50);
             });
         }
     }

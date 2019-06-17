@@ -7,6 +7,13 @@
     <UserSecretsId>4138c1a2-a58a-42b2-98ee-52a5027f10c9</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20190617175220_CreateIdentitySchems.cs" />
+    <Compile Remove="Migrations\20190617175220_CreateIdentitySchems.Designer.cs" />
+    <Compile Remove="Migrations\20190617175747_CreateIdentitySchemse.cs" />
+    <Compile Remove="Migrations\20190617175747_CreateIdentitySchemse.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.2.0" />
@@ -15,6 +22,13 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.7.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Models\S_TypeContent.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
 
 </Project>

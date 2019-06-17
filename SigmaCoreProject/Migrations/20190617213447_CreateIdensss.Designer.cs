@@ -10,8 +10,8 @@ using SigmaCoreProject.Models;
 namespace SigmaCoreProject.Migrations
 {
     [DbContext(typeof(sigmaCoreContext))]
-    [Migration("20190617175747_CreateIdentitySchemse")]
-    partial class CreateIdentitySchemse
+    [Migration("20190617213447_CreateIdensss")]
+    partial class CreateIdensss
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,6 +84,32 @@ namespace SigmaCoreProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("News");
+                });
+
+            modelBuilder.Entity("SigmaCoreProject.Models.PhysPers", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("DateDb")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("IdUser")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Patronymic")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Surname")
+                        .HasMaxLength(500);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PhysPers");
                 });
 #pragma warning restore 612, 618
         }

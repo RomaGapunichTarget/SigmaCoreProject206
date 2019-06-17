@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SigmaCoreProject.Migrations
 {
-    public partial class CreateIdentitySchems : Migration
+    public partial class CreateIdensss : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,6 +47,23 @@ namespace SigmaCoreProject.Migrations
                 {
                     table.PrimaryKey("PK_News", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "PhysPers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(maxLength: 500, nullable: true),
+                    Surname = table.Column<string>(maxLength: 500, nullable: true),
+                    Patronymic = table.Column<string>(maxLength: 500, nullable: true),
+                    DateDb = table.Column<DateTime>(type: "datetime", nullable: true),
+                    IdUser = table.Column<string>(maxLength: 500, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PhysPers", x => x.Id);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -56,6 +73,9 @@ namespace SigmaCoreProject.Migrations
 
             migrationBuilder.DropTable(
                 name: "News");
+
+            migrationBuilder.DropTable(
+                name: "PhysPers");
         }
     }
 }
