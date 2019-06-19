@@ -31,4 +31,10 @@
     </Compile>
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="Views\Style\" />
+    <Folder Include="Style\" />
+  </ItemGroup>
+
 </Project>

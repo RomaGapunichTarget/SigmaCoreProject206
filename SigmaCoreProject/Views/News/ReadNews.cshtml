@@ -1,0 +1,59 @@
+﻿@model SigmaCoreProject.Models.ModelReadNews
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>News</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <p>Оглавление новости</p>
+        </dt>
+        <dd class="col-sm-10">
+            <p>@Model.TitileNews</p>
+        </dd>
+        <dt class="col-sm-2">
+            <p>Тело новости</p>
+        </dt>
+        <dd class="col-sm-10">
+            <p>@Model.Bodynews</p>
+        </dd>
+    </dl>
+    @{
+        if (Model.lstComentNews !=null)
+        {
+            foreach (var comments in Model.lstComentNews)
+            {
+                <div class="panel-body">
+                    <div class="panel-info">
+                        <p>@comments.DateCrateCommnet</p>
+                    </div>
+                    <div class="panel-body">
+                        <p>@comments.Comment</p>
+                    </div>
+                </div>
+            }
+        }
+       
+    }
+    <form asp-controller="News" asp-action="AddComment">
+        <div asp-validation-summary="None" class="text-danger"></div>
+        <input asp-for="IdNews" value="@Model.IdNews" class="form-control" style="display: none" />
+        <div class="form-group">
+            <label asp-for="BodyComment" class="control-label"></label>
+            <input asp-for="BodyComment" class="form-control" />
+            <span asp-validation-for="BodyComment" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+<div>
+    <a asp-controller="Home" asp-action="Index">Вернуться к новостям</a>
+</div>

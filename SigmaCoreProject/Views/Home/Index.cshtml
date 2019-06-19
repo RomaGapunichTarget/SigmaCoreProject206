@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<ViewlstModels>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +8,22 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+@foreach (var news in Model)
+{
+    <div class="row">
+        <div class="col-md-12 col-xl-12 col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <p>@news.titleNews</p>
+                </div>
+                <div class="panel-body">
+                    <p>@news.BodyNews</p>
+                </div>
+                <div class="panel-footer">
+                    <a asp-controller="News" asp-action="ReadNews" asp-route-id="@news.IdNews">Читать полностью</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+}

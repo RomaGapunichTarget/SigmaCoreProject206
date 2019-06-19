@@ -18,8 +18,15 @@ namespace SigmaCoreProject.Controllers
         }
         public IActionResult Index()
         {
-            var lstNewss = _context.News.Select(news => news).ToList();
-            return View();
+            List<ViewlstModels> lstList  = new List<ViewlstModels>();
+
+             var lstNewss = _context.News.Select(news => news).ToList();
+
+            foreach (var news in lstNewss)
+            {
+                lstList.Add(new ViewlstModels {IdNews = news.Id,titleNews = news.TitleNews,BodyNews = news.BodyNews});
+            }
+            return View(lstList);
         }
 
         public IActionResult Privacy()
